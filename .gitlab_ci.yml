@@ -1,0 +1,56 @@
+before_script:
+# Install dependencies
+- bash tests/docker_install.sh > /dev/null
+
+stages:
+  - build
+  - test
+  - deploy
+
+build:composer:
+  image: php:5.6
+  stage: build
+  script: 
+  - curl -sS https://getcomposer.org/installer | php
+  - php composer.phar install
+  cache:
+    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
+    paths:
+    - vendor/
+
+test:5.6:
+  stage: test
+  image: php:5.6
+  script:
+  - vendor/bin/phpunit -c tests/phpunit.xml
+  cache:
+    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
+    paths:
+    - vendor/
+
+test:7.0:
+  stage: test
+  image: php:7.0
+  script:
+  - vendor/bin/phpunit -c tests/phpunit.xml
+  cache:
+    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
+    paths:
+    - vendor/
+
+release:
+  stage: deploy
+  image: php:5.6
+  only:
+  - master
+  script:
+  - vendor/bin/phpunit -c tests/phpunit.xml
+  artifacts:
+    name: "${CI_BUILD_NAME}_${CI_BUILD_REF_NAME}"
+    paths:
+      - build/
+    expire_in: 3 weeks
+  cache:
+    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
+    paths:
+    - vendor/

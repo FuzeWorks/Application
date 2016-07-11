@@ -30,16 +30,29 @@
  * @version Version 0.0.1
  */
 
-require_once(dirname(__DIR__) . '/vendor/autoload.php');
+use FuzeWorks\Logger;
+use Tracy\Debugger;
 
-$configurator = new FuzeWorks\Configurator();
+// Load the FuzeWorks container
+$container = require(dirname(__DIR__) . '/application/bootstrap.php');
 
-//$configurator->setDebugMode('23.75.345.200'); // enable for your remote IP
+// Load the test abstract
+require_once 'TestCase.php';
 
-$configurator->setTimeZone('Europe/Amsterdam');
-$configurator->setTempDirectory(dirname(__DIR__) . '/temp');
-$configurator->setLogDirectory(dirname(__DIR__). '/log');
+// Reset error and exception handlers
+ob_start();
+restore_error_handler();
+restore_exception_handler();
 
-$container = $configurator->createContainer();
+// Display all errors
+ini_set('display_errors', 1);
+error_reporting(E_ALL | E_STRICT);
 
-return $container;
+// Set localhost "remote" IP
+isset($_SERVER['REMOTE_ADDR']) OR $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+// Set a logger which works better with the CLI interface
+Logger::setLoggerTemplate('logger_cli');
+
+//require_once('mocks/autoloader.php');
+//spl_autoload_register('autoload');
