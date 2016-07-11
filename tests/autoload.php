@@ -30,7 +30,29 @@
  * @version Version 0.0.1
  */
 
-$container = require('../application/bootstrap.php');
+use FuzeWorks\Logger;
+use Tracy\Debugger;
 
-$router = FuzeWorks\Factory::getInstance()->router;
-$router->route();
+// Load the FuzeWorks container
+$container = require(dirname(__DIR__) . '/application/bootstrap.php');
+
+// Load the test abstract
+require_once 'TestCase.php';
+
+// Reset error and exception handlers
+ob_start();
+restore_error_handler();
+restore_exception_handler();
+
+// Display all errors
+ini_set('display_errors', 1);
+error_reporting(E_ALL | E_STRICT);
+
+// Set localhost "remote" IP
+isset($_SERVER['REMOTE_ADDR']) OR $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
+
+// Set a logger which works better with the CLI interface
+Logger::setLoggerTemplate('logger_cli');
+
+//require_once('mocks/autoloader.php');
+//spl_autoload_register('autoload');

@@ -30,7 +30,52 @@
  * @version Version 0.0.1
  */
 
-$container = require('../application/bootstrap.php');
+use Application\Controller\Standard;
+use FuzeWorks\Layout;
+use FuzeWorks\Factory;
 
-$router = FuzeWorks\Factory::getInstance()->router;
-$router->route();
+/**
+ * Controller Standard Test.
+ *
+ * Tests the 'standard' controller.
+ * @todo Implement a proper way to load the controller
+ */
+class standardTest extends TestCase
+{
+
+    private $controller;
+
+    public function setUp()
+    {
+        require_once('application/Controller/controller.standard.php');
+        $this->controller = new Standard();
+    }
+
+    public function testType()
+    {
+        $this->assertInstanceOf('\Application\Controller\Standard', $this->controller);
+    }
+
+    public function testIndex()
+    {
+        // First set a test file ready
+        Layout::setDirectory(dirname(__FILE__) . '/testIndex/');
+
+        // Perform and retrieve the output
+        ob_start();
+        $this->controller->index();
+        Factory::getInstance()->output->_display();
+        $output = ob_get_contents();
+        ob_end_clean();
+
+        $this->assertEquals('Hello!', $output);
+    }
+
+    public function tearDown()
+    {
+        Layout::reset();
+        Factory::getInstance()->output->set_output('');
+    }
+
+
+}

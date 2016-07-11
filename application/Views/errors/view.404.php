@@ -1,10 +1,10 @@
 <?php
 /**
- * FuzeWorks.
+ * FuzeWorks Application Skeleton.
  *
  * The FuzeWorks MVC PHP FrameWork
  *
- * Copyright (C) 2015   TechFuze
+ * Copyright (C) 2016   TechFuze
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@
  * @copyright Copyright (c) 1996 - 2015, Free Software Foundation, Inc. (http://www.fsf.org/)
  * @license   http://opensource.org/licenses/GPL-3.0 GPLv3 License
  *
- * @link  http://fuzeworks.techfuze.net
+ * @link  http://techfuze.net/fuzeworks
  * @since Version 0.0.1
  *
  * @version Version 0.0.1
