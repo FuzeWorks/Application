@@ -31,7 +31,6 @@
  */
 
 return array(
-  'enable_composer' 		=> true,
   'enable_modules' 			=> true,
   'enable_events' 			=> true,
   'composer_autoloader' 	=> '',
