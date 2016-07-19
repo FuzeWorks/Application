@@ -13,12 +13,6 @@
             "homepage": "https://techfuze.net/fuzeworks/contributors"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "http://10.0.0.32/fuzeworks/core.git"
-        }
-    ],
     "require": {
         "php": ">=5.6.0",
         "fuzeworks/core": "dev-master",
