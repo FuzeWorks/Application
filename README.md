@@ -1,4 +1,4 @@
-FuzeWorks Application Skeleton [![build status](http://10.0.0.32/fuzeworks/Application/badges/master/build.svg)](http://10.0.0.32/fuzeworks/Application/commits/master)
+FuzeWorks Application Skeleton [![Build Status](https://travis-ci.org/FuzeWorks/Application.svg?branch=master)](https://travis-ci.org/FuzeWorks/Application)
 =================
 
 This is a simple, skeleton application using [FuzeWorks](https://techfuze.net/fuzeworks). This is meant to
