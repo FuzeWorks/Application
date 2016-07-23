@@ -27,14 +27,14 @@
  * @link  http://techfuze.net/fuzeworks
  * @since Version 0.0.1
  *
- * @version Version 0.0.1
+ * @version Version 1.0.0
  */
 
 return array(
-  'enable_modules' 			=> true,
   'enable_events' 			=> true,
   'composer_autoloader' 	=> '',
   'registry_caching'		=> false,
   'registry_caching_method'	=> 'file',
   'registry_caching_time'	=> 300,
+  'enable_modules' 			=> false
 );
