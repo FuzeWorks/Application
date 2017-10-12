@@ -2,14 +2,10 @@ language: php
 
 php:
   - 7
-  - 5.6
+  - 7.1
 
 script:
   - php vendor/bin/phpunit -v -c tests/phpunit.xml --coverage-text
 
 before_script:
   - composer install
-
-addons:
-    code_climate:
-        repo_token: $CODECLIMATE_REPO_TOKEN
