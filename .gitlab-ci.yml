@@ -8,21 +8,11 @@ stages:
   - deploy
 
 build:composer:
-  image: php:5.6
+  image: php:7.1
   stage: build
   script: 
   - curl -sS https://getcomposer.org/installer | php
   - php composer.phar install
-  cache:
-    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
-    paths:
-    - vendor/
-
-test:5.6:
-  stage: test
-  image: php:5.6
-  script:
-  - vendor/bin/phpunit -c tests/phpunit.xml
   cache:
     key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
     paths:
@@ -38,9 +28,19 @@ test:7.0:
     paths:
     - vendor/
 
+test:7.1:
+  stage: test
+  image: php:7.1
+  script:
+  - vendor/bin/phpunit -c tests/phpunit.xml
+  cache:
+    key: "$CI_BUILD_REF/$CI_BUILD_REF_NAME"
+    paths:
+    - vendor/
+
 release:
   stage: deploy
-  image: php:5.6
+  image: php:7.1
   only:
   - master
   script:

@@ -31,6 +31,7 @@
  */
 
 use FuzeWorks\Core;
+use PHPUnit\Framework\TestCase;
 
 /**
  * Class LoadFuzeWorksTest.

@@ -36,9 +36,6 @@ use Tracy\Debugger;
 // Load the FuzeWorks container
 $container = require(dirname(__DIR__) . '/application/bootstrap.php');
 
-// Load the test abstract
-require_once 'TestCase.php';
-
 // Reset error and exception handlers
 ob_start();
 restore_error_handler();
