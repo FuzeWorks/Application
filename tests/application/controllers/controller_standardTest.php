@@ -30,6 +30,7 @@
  * @version Version 1.0.0
  */
 
+use PHPUnit\Framework\TestCase;
 use Application\Controller\Standard;
 use FuzeWorks\Layout;
 use FuzeWorks\Factory;
@@ -44,11 +45,13 @@ class standardTest extends TestCase
 {
 
     private $controller;
+    private $factory;
 
     public function setUp()
     {
         require_once('application/Controller/controller.standard.php');
         $this->controller = new Standard();
+        $this->factory = Factory::getInstance();
     }
 
     public function testType()
@@ -59,12 +62,12 @@ class standardTest extends TestCase
     public function testIndex()
     {
         // First set a test file ready
-        Layout::setDirectory(dirname(__FILE__) . '/testIndex/');
+        $this->factory->layout->setDirectory(dirname(__FILE__) . '/testIndex/');
 
         // Perform and retrieve the output
         ob_start();
         $this->controller->index();
-        Factory::getInstance()->output->_display();
+        $this->factory->output->_display();
         $output = ob_get_contents();
         ob_end_clean();
 
@@ -73,8 +76,8 @@ class standardTest extends TestCase
 
     public function tearDown()
     {
-        Layout::reset();
-        Factory::getInstance()->output->set_output('');
+        $this->factory->layout->reset();
+        $this->factory->output->set_output('');
     }
 
 
