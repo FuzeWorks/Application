@@ -1,6 +1,6 @@
 <?php
 /**
- * FuzeWorks Framework Core.
+ * FuzeWorks WebComponent.
  *
  * The FuzeWorks PHP FrameWork
  *
@@ -29,12 +29,21 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  *
  * @link  http://techfuze.net/fuzeworks
- * @since Version 1.1.1
+ * @since Version 1.2.0
  *
  * @version Version 1.2.0
  */
 
-return array(
-    // DON'T TURN THIS OFF UNLESS YOU KNOW WHAT YOU ARE DOING
-  'enable_events' 			=> true
-);
+namespace Application\View;
+
+use FuzeWorks\WebAppView;
+
+class IndexHtmlView extends WebAppView
+{
+
+    public function index()
+    {
+        return $this->layouts->get('home');
+    }
+
+}

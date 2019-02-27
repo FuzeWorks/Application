@@ -30,7 +30,9 @@
  * @version Version 1.0.0
  */
 
-$container = require('../application/bootstrap.php');
+/** @var \FuzeWorks\Factory $container */
+$container = require(dirname(__DIR__) .  '/application/bootstrap.php');
 
-$router = FuzeWorks\Factory::getInstance()->router;
-$router->route();
+/** @var \FuzeWorks\WebComponent $web */
+$web = $container->web;
+$web->routeWebRequest();

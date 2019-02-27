@@ -29,12 +29,14 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  *
  * @link  http://techfuze.net/fuzeworks
- * @since Version 1.1.1
+ * @since Version 1.1.4
  *
  * @version Version 1.2.0
  */
 
+/**
+ * Special settings for plugins. Allows the administrator to disable plugins. Can be edited manually or automatically. 
+ */
 return array(
-    // DON'T TURN THIS OFF UNLESS YOU KNOW WHAT YOU ARE DOING
-  'enable_events' 			=> true
+	'disabled_plugins' => array(),
 );

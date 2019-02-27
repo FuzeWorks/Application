@@ -48,12 +48,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
-        .col-centered{
-            float: none;
-            margin: 0 auto;
-        }
-
     </style>
 </head>
 <body>
@@ -67,18 +61,7 @@
                             This website is currently under development.
                        </p>
                        <p>
-                            <?php if ($vars['adminMail'] == '') {
-    ?>
-                            For further information, please contact the website administrator</a> 
-                            <?php
-} else {
-    ?>
-                            For further information, please contact <a href='mailto:<?php echo $vars['adminMail'];
-    ?>'><?php echo $vars['adminMail'];
-    ?></a> 
-                            <?php
-} ?>
-
+                            For further information, please contact the website administrator</a>
                        </p>
                     </div>
                 </div>
@@ -92,9 +75,6 @@
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
         <script>
-            var currentPage = 0;
-            var currentProgress = 0;
-
             start();
             function start() {
                 $("#contentPanel").fadeIn(500);

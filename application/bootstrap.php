@@ -30,16 +30,36 @@
  * @version Version 1.0.0
  */
 
+use FuzeWorks\Priority;
+use FuzeWorks\WebAppComponent;
+
 require_once(dirname(__DIR__) . '/vendor/autoload.php');
 
+// Open configurator
 $configurator = new FuzeWorks\Configurator();
 
-//$configurator->setDebugMode('23.75.345.200'); // enable for your remote IP
-
+// Set up basic settings
 $configurator->setTimeZone('Europe/Amsterdam');
 $configurator->setTempDirectory(dirname(__DIR__) . '/temp');
 $configurator->setLogDirectory(dirname(__DIR__). '/log');
 
-$container = $configurator->createContainer();
+// Enable components
+// WebComponent
+$webAppComponent = new WebAppComponent();
+$webAppComponent->enableWebRequest();
+$configurator->addComponent($webAppComponent);
 
-return $container;
+// Add directories
+$configurator->addDirectory(dirname(__FILE__) . '/Config', 'config', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Helper', 'helpers', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Library', 'libraries', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Plugin', 'plugins', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Controller', 'controllers', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/View', 'views', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Model', 'models', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . '/Layout', 'layouts', Priority::NORMAL);
+
+// Debug
+$configurator->enableDebugMode()->setDebugAddress('ALL');
+
+return $configurator->createContainer();

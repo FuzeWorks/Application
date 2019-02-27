@@ -1,120 +1,43 @@
 <?php
 /**
- * FuzeWorks Application Skeleton.
+ * FuzeWorks Framework MVCR Component.
  *
- * The FuzeWorks MVC PHP FrameWork
+ * The FuzeWorks PHP FrameWork
  *
- * Copyright (C) 2016   TechFuze
+ * Copyright (C) 2013-2019 TechFuze
  *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  *
  * @author    TechFuze
- * @copyright Copyright (c) 2013 - 2016, Techfuze. (http://techfuze.net)
- * @copyright Copyright (c) 1996 - 2015, Free Software Foundation, Inc. (http://www.fsf.org/)
- * @license   http://opensource.org/licenses/GPL-3.0 GPLv3 License
+ * @copyright Copyright (c) 2013 - 2019, TechFuze. (http://techfuze.net)
+ * @license   https://opensource.org/licenses/MIT MIT License
  *
  * @link  http://techfuze.net/fuzeworks
- * @since Version 0.0.1
+ * @since Version 1.2.0
  *
- * @version Version 1.0.0
+ * @version Version 1.2.0
  */
 
 return array(
 
-	/*
-	|--------------------------------------------------------------------------
-	| Enable Query Strings
-	|--------------------------------------------------------------------------
-	|
-	| By default CodeIgniter uses search-engine friendly segment based URLs:
-	| example.com/who/what/where/
-	|
-	| By default CodeIgniter enables access to the $_GET array.  If for some
-	| reason you would like to disable it, set 'allow_get_array' to FALSE.
-	|
-	| You can optionally enable standard query string based URLs:
-	| example.com?who=me&what=something&where=here
-	|
-	| Options are: TRUE or FALSE (boolean)
-	|
-	| The other items let you set the query string 'words' that will
-	| invoke your controllers and its functions:
-	| example.com/index.php?c=controller&m=function
-	|
-	| Please note that some of the helpers won't work as expected when
-	| this feature is enabled, since CodeIgniter is designed primarily to
-	| use segment based URLs.
-	|
-	*/
-	'allow_get_array' => TRUE,
-	'enable_query_strings' => FALSE,
-	'controller_trigger' => 'c',
-	'function_trigger' => 'm',
-	'directory_trigger' => 'd',
-
-	/*
-	|--------------------------------------------------------------------------
-	| Allowed URL Characters
-	|--------------------------------------------------------------------------
-	|
-	| This lets you specify which characters are permitted within your URLs.
-	| When someone tries to submit a URL with disallowed characters they will
-	| get a warning message.
-	|
-	| As a security measure you are STRONGLY encouraged to restrict URLs to
-	| as few characters as possible.  By default only these are allowed: a-z 0-9~%.:_-
-	|
-	| Leave blank to allow all characters -- but only if you are insane.
-	|
-	| The configured value is actually a regular expression character group
-	| and it will be executed as: ! preg_match('/^[<permitted_uri_chars>]+$/i
-	|
-	| DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
-	|
-	*/
-	'permitted_uri_chars' => 'a-z 0-9~%.:_\-',
-
-	/*
-	|--------------------------------------------------------------------------
-	| URI PROTOCOL
-	|--------------------------------------------------------------------------
-	|
-	| This item determines which server global should be used to retrieve the
-	| URI string.  The default setting of 'REQUEST_URI' works for most servers.
-	| If your links do not seem to work, try one of the other delicious flavors:
-	|
-	| 'REQUEST_URI'    Uses $_SERVER['REQUEST_URI']
-	| 'QUERY_STRING'   Uses $_SERVER['QUERY_STRING']
-	| 'PATH_INFO'      Uses $_SERVER['PATH_INFO']
-	|
-	| WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
-	*/	
-    'uri_protocol' => 'REQUEST_URI',
-
-	/*
-	|--------------------------------------------------------------------------
-	| URL suffix
-	|--------------------------------------------------------------------------
-	|
-	| This option allows you to add a suffix to all URLs generated by CodeIgniter.
-	| For more information please see the user guide:
-	|
-	| https://codeigniter.com/user_guide/general/urls.html
-	*/
-    'url_suffix' => '',
-
-    'default_controller' => 'standard',
-    'default_function' => 'index',
+    'default_view' => 'index',
+    'default_viewType' => 'html',
+    'default_viewMethod' => 'index',
 
 );

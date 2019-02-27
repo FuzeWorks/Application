@@ -1,6 +1,6 @@
 <?php
 /**
- * FuzeWorks Framework Core.
+ * FuzeWorks WebComponent.
  *
  * The FuzeWorks PHP FrameWork
  *
@@ -29,12 +29,18 @@
  * @license   https://opensource.org/licenses/MIT MIT License
  *
  * @link  http://techfuze.net/fuzeworks
- * @since Version 1.1.1
+ * @since Version 1.2.0
  *
  * @version Version 1.2.0
  */
-
-return array(
-    // DON'T TURN THIS OFF UNLESS YOU KNOW WHAT YOU ARE DOING
-  'enable_events' 			=> true
-);
+return [
+    'allow_get_input' => true,
+    'empty_global_arrays' => true,
+    'restore_global_arrays' => true,
+    'base_url' => '',
+    'permitted_uri_chars' => 'a-z 0-9~%.:_\-',
+    'charset' => 'UTF-8',
+    'compress_output' => false,
+    'cookie_prefix' => 'FWZ_',
+    'xss_clean' => true
+];
