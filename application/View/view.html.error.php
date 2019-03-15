@@ -34,10 +34,34 @@
  * @version Version 1.2.0
  */
 
-return array(
+namespace Application\View;
 
-    'default_view' => 'index',
-    'default_viewType' => 'html',
-    'default_viewMethod' => 'index',
+use FuzeWorks\WebAppView;
 
-);
+/**
+ * Class ErrorHtmlView
+ *
+ * This view gets loaded upon a HTTP error. For example, the error404() method gets loaded when a page can't be
+ * found by the WebComponent. The error500 gets loaded upon a fatal error somewhere in the application.
+ *
+ * Important! The status header is already set by WebComponent. No need to do it again.
+ */
+class ErrorHtmlView extends WebAppView
+{
+
+    public function error403()
+    {
+        return $this->layouts->get('errors/403');
+    }
+
+    public function error404()
+    {
+        return $this->layouts->get('errors/404');
+    }
+
+    public function error500()
+    {
+        return $this->layouts->get('errors/500');
+    }
+
+}

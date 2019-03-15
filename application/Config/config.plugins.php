@@ -34,10 +34,9 @@
  * @version Version 1.2.0
  */
 
+/**
+ * Special settings for plugins. Allows the administrator to disable plugins. Can be edited manually or automatically. 
+ */
 return array(
-
-    'default_view' => 'index',
-    'default_viewType' => 'html',
-    'default_viewMethod' => 'index',
-
+	'disabled_plugins' => array(),
 );

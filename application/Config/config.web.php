@@ -33,11 +33,24 @@
  *
  * @version Version 1.2.0
  */
+return [
+    // General
+    'base_url' => '',
+    'serverName' => 'FuzeWorks',
 
-return array(
+    'allow_get_input' => true,
+    'empty_global_arrays' => true,
+    'restore_global_arrays' => true,
+    'permitted_uri_chars' => 'a-z 0-9~%.:_\-',
+    'charset' => 'UTF-8',
+    'compress_output' => false,
+    'xss_clean' => true,
 
-    'default_view' => 'index',
-    'default_viewType' => 'html',
-    'default_viewMethod' => 'index',
+    // Cookie settings
+    'cookie_prefix' => 'FWZ_',
+    'cookie_domain' => '',
+    'cookie_path' => '/',
+    'cookie_secure' => false,
+    'cookie_httponly' => false,
 
-);
+];

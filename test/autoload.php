@@ -31,15 +31,10 @@
  */
 
 use FuzeWorks\Logger;
-use Tracy\Debugger;
 
 // Load the FuzeWorks container
 $container = require(dirname(__DIR__) . '/application/bootstrap.php');
-
-// Reset error and exception handlers
-ob_start();
-restore_error_handler();
-restore_exception_handler();
+Logger::disableHandlers();
 
 // Display all errors
 ini_set('display_errors', 1);
@@ -50,6 +45,3 @@ isset($_SERVER['REMOTE_ADDR']) OR $_SERVER['REMOTE_ADDR'] = '127.0.0.1';
 
 // Set a logger which works better with the CLI interface
 Logger::setLoggerTemplate('logger_cli');
-
-//require_once('mocks/autoloader.php');
-//spl_autoload_register('autoload');
