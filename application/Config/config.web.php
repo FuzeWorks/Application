@@ -34,13 +34,23 @@
  * @version Version 1.2.0
  */
 return [
+    // General
+    'base_url' => '',
+    'serverName' => 'FuzeWorks',
+
     'allow_get_input' => true,
     'empty_global_arrays' => true,
     'restore_global_arrays' => true,
-    'base_url' => '',
     'permitted_uri_chars' => 'a-z 0-9~%.:_\-',
     'charset' => 'UTF-8',
     'compress_output' => false,
+    'xss_clean' => true,
+
+    // Cookie settings
     'cookie_prefix' => 'FWZ_',
-    'xss_clean' => true
+    'cookie_domain' => '',
+    'cookie_path' => '/',
+    'cookie_secure' => false,
+    'cookie_httponly' => false,
+
 ];

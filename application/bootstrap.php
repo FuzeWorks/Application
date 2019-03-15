@@ -37,15 +37,15 @@
 use FuzeWorks\Priority;
 use FuzeWorks\WebAppComponent;
 
-require_once(dirname(__DIR__) . '/vendor/autoload.php');
+require_once(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php');
 
 // Open configurator
 $configurator = new FuzeWorks\Configurator();
 
 // Set up basic settings
 $configurator->setTimeZone('Europe/Amsterdam');
-$configurator->setTempDirectory(dirname(__DIR__) . '/temp');
-$configurator->setLogDirectory(dirname(__DIR__). '/log');
+$configurator->setTempDirectory(dirname(__DIR__) . DIRECTORY_SEPARATOR . 'temp');
+$configurator->setLogDirectory(dirname(__DIR__). DIRECTORY_SEPARATOR . 'log');
 
 // Enable components
 // WebComponent
@@ -54,16 +54,16 @@ $webAppComponent->enableWebRequest();
 $configurator->addComponent($webAppComponent);
 
 // Add directories
-$configurator->addDirectory(dirname(__FILE__) . '/Config', 'config', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Helper', 'helpers', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Library', 'libraries', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Plugin', 'plugins', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Controller', 'controllers', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/View', 'views', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Model', 'models', Priority::HIGH);
-$configurator->addDirectory(dirname(__FILE__) . '/Layout', 'layouts', Priority::NORMAL);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Config', 'config', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Helper', 'helpers', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Library', 'libraries', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Plugin', 'plugins', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Controller', 'controllers', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'View', 'views', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Model', 'models', Priority::HIGH);
+$configurator->addDirectory(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'Layout', 'layouts', Priority::NORMAL);
 
 // Debug
-$configurator->enableDebugMode()->setDebugAddress('ALL');
+$configurator->enableDebugMode()->setDebugAddress('127.0.0.1');
 
 return $configurator->createContainer();

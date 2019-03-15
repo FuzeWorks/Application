@@ -18,14 +18,14 @@ PHP 7.1 or higher.
 Installation
 ------------
 
-The best way to install Web Project is using Composer. If you don't have Composer yet,
+The best way to install this Application is using Composer. If you don't have Composer yet,
 download it following [the instructions](https://doc.nette.org/composer). Then use command:
 
 	composer create-project fuzeworks/application path/to/install
 	cd path/to/install
 
 
-Make directories `temp/` and `log/` writable.
+Make sure directories `temp/` and `log/` are writable.
 
 
 Web Server Setup

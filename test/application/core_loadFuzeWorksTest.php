@@ -30,55 +30,23 @@
  * @version Version 1.0.0
  */
 
-use PHPUnit\Framework\TestCase;
-use Application\Controller\Standard;
-use FuzeWorks\Layout;
+use FuzeWorks\Core;
 use FuzeWorks\Factory;
+use PHPUnit\Framework\TestCase;
 
 /**
- * Controller Standard Test.
+ * Class LoadFuzeWorksTest.
  *
- * Tests the 'standard' controller.
- * @todo Implement a proper way to load the controller
+ * Tests if the application is able to open FuzeWorks and all it's classes. 
+ * Does not test any internal workings of FuzeWorks
  */
-class standardTest extends TestCase
+class loadFuzeWorksTest extends TestCase
 {
 
-    private $controller;
-    private $factory;
-
-    public function setUp()
+    public function testLoadCore()
     {
-        require_once('application/Controller/controller.standard.php');
-        $this->controller = new Standard();
-        $this->factory = Factory::getInstance();
+        $this->assertInstanceOf('\FuzeWorks\Factory', Factory::getInstance());
+
     }
-
-    public function testType()
-    {
-        $this->assertInstanceOf('\Application\Controller\Standard', $this->controller);
-    }
-
-    public function testIndex()
-    {
-        // First set a test file ready
-        $this->factory->layout->setDirectory(dirname(__FILE__) . '/testIndex/');
-
-        // Perform and retrieve the output
-        ob_start();
-        $this->controller->index();
-        $this->factory->output->_display();
-        $output = ob_get_contents();
-        ob_end_clean();
-
-        $this->assertEquals('Hello!', $output);
-    }
-
-    public function tearDown()
-    {
-        $this->factory->layout->reset();
-        $this->factory->output->set_output('');
-    }
-
 
 }

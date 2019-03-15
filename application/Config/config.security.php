@@ -51,8 +51,14 @@ return [
 	*/
     'csrf_protection' => true,
     'csrf_token_name' => 'fw_csrf_token',
-    'csrf_cookie_name' => 'fw_csrf_cookie',
     'csrf_expire' => 7200,
-    'csrf_regenerate' => TRUE,
     'csrf_exclude_uris' => array(),
+
+    // CSRF Cookie information
+    'csrf_cookie_name' => 'fw_csrf_cookie',
+    'csrf_cookie_prefix' => '',
+    'csrf_cookie_domain' => '',
+    'csrf_cookie_path' => '/',
+    'csrf_cookie_secure' => false,
+    'csrf_cookie_httponly' => false
 ];
