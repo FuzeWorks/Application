@@ -34,10 +34,10 @@
  * @version Version 1.2.0
  */
 
-return array(
+namespace Application\Controller;
 
-    'default_view' => 'index',
-    'default_viewType' => 'html',
-    'default_viewMethod' => 'index',
+use FuzeWorks\WebAppController;
 
-);
+class ErrorController extends WebAppController
+{
+}

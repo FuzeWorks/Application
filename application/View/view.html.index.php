@@ -34,10 +34,16 @@
  * @version Version 1.2.0
  */
 
-return array(
+namespace Application\View;
 
-    'default_view' => 'index',
-    'default_viewType' => 'html',
-    'default_viewMethod' => 'index',
+use FuzeWorks\WebAppView;
 
-);
+class IndexHtmlView extends WebAppView
+{
+
+    public function index()
+    {
+        return $this->layouts->get('home');
+    }
+
+}
