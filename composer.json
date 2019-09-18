@@ -14,9 +14,8 @@
         }
     ],
     "require": {
-      "php": ">=7.1.0",
-      "fuzeworks/webappcomponent": "1.2.0-RC3",
-      "ext-pdo": "*"
+        "php": ">=7.1.0",
+        "fuzeworks/webappcomponent": "1.2.0-RC5"
     },
     "require-dev": {
         "phpunit/phpunit": "^7"

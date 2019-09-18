@@ -37,7 +37,7 @@
 
 <html>
 <head>
-    <title>FuzeWorks - Home</title>
+    <title><?= $vars['serverName']; ?> - Home</title>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -60,7 +60,7 @@
             <div class='col-lg-12 col-md-4 col-sm-12'>
                 <div id='contentPanel' class="panel panel-default" style='display:none'>
                     <div id='1' class="panel-body" style='display:none'>
-                       <p class="lead">Welcome to FuzeWorks</p>
+                       <p class="lead">Welcome to <?= $vars['serverName']; ?></p>
                        <p>
                             This website is currently under development.
                        </p>
